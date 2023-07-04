@@ -1,5 +1,6 @@
 import './App.css';
 import SimpsonComponent from "./components/SimpsonComponent/SimpsonComponent";
+import RickAndMortyComponent from "./components/RickAndMortyComponent/RickAndMortyComponent";
 
 const App = () => {
     return (
@@ -38,6 +39,55 @@ const App = () => {
                 age={1}
                 info={`Ма́ргарет Эвелин «Мэ́гги» Си́мпсон (англ. Margaret Evelyn “Maggie” Simpson) — персонаж мультсериала «Симпсоны». Впервые появилась на телевидении в шоу Трейси Ульман, в короткометражке Good Night (англ.)русск. 19 апреля 1987 года. Мэгги была придумана и разработана карикатуристом Мэттом Грейнингом, пока он ждал встречи с Джеймсом Л. Бруксом. Названа в честь младшей сестры Грейнинга. После появления в шоу Трейси Ульман, через три года семья Симпсонов получила собственный сериал на телеканале Fox, дебют произошёл 17 декабря 1989 года.`}
                 photo={'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'}
+            />
+
+            <RickAndMortyComponent
+                id={59}
+                name={'Brad Anderson'}
+                status={'Dead'}
+                species={'Human'}
+                gender={`Male`}
+                image={'https://rickandmortyapi.com/api/character/avatar/59.jpeg'}
+            />
+            <RickAndMortyComponent
+                id={196}
+                name={'Krombopulos Michael'}
+                status={'Dead'}
+                species={'Alien'}
+                gender={`Male`}
+                image={'https://rickandmortyapi.com/api/character/avatar/196.jpeg'}
+            />
+            <RickAndMortyComponent
+                id={236}
+                name={'Mr. Beauregard'}
+                status={'Dead'}
+                species={'Alien'}
+                gender={`Male`}
+                image={'https://rickandmortyapi.com/api/character/avatar/236.jpeg'}
+            />
+            <RickAndMortyComponent
+                id={529}
+                name={'Lizard'}
+                status={'Dead'}
+                species={'Alien'}
+                gender={`Male`}
+                image={'https://rickandmortyapi.com/api/character/avatar/529.jpeg'}
+            />
+            <RickAndMortyComponent
+                id={762}
+                name={'Martínez'}
+                status={'Dead'}
+                species={'Animal'}
+                gender={`Male`}
+                image={'https://rickandmortyapi.com/api/character/avatar/762.jpeg'}
+            />
+            <RickAndMortyComponent
+                id={773}
+                name={'Yo-yo Rick'}
+                status={'unknown'}
+                species={'Human'}
+                gender={`Male`}
+                image={'https://rickandmortyapi.com/api/character/avatar/773.jpeg'}
             />
         </>
     );
