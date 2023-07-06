@@ -7,6 +7,7 @@ const PostsDetailsComponent = (props) => {
             <div>Post id: {post.id}</div>
             <div>Post title: {post.title}</div>
             <div>Post body: {post.body}</div>
+            <div>User Id: {post.userId}</div>
             <button onClick={()=>handleClick(post.id)}>Show less about Post</button>
         </div>
     );

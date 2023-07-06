@@ -5,7 +5,7 @@ import PostsDetailsComponent from "../PostDetails/PostDetailsCompanent";
 const PostsContainer = () => {
 
     const [posts, setPosts] = useState([]);
-    const [show,setShow] = useState(false);
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -25,10 +25,10 @@ const PostsContainer = () => {
                 return (
                     show ?
                         <PostsDetailsComponent
-                        key={post.id}
-                        post={post}
-                        handleClick={handleClick}
-                    />
+                            key={post.id}
+                            post={post}
+                            handleClick={handleClick}
+                        />
                         :
                         <PostsComponent
                             key={post.id}
