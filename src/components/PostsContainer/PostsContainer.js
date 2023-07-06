@@ -1,5 +1,6 @@
 import PostsComponent from "../PostsComponent/PostsComponent";
 import {useEffect, useState} from "react";
+import PostsDetailsComponent from "../../PostDetails/PostDetailsCompanent";
 
 const PostsContainer = () => {
 
@@ -15,7 +16,6 @@ const PostsContainer = () => {
 
     const handleClick = (v) => {
         show ? setShow(false) : setShow(true);
-        console.log(show, v);
     }
 
     return (
@@ -23,11 +23,20 @@ const PostsContainer = () => {
             <div className={"header"}>HW2 Task1</div>
             {posts.map((post) => {
                 return (
-                    <PostsComponent
+                    show ?
+                        <PostsDetailsComponent
                         key={post.id}
                         post={post}
                         handleClick={handleClick}
-                    />)
+                    />
+                        :
+                        <PostsComponent
+                            key={post.id}
+                            post={post}
+                            handleClick={handleClick}
+                        />
+
+                )
             })}
         </>
     );
