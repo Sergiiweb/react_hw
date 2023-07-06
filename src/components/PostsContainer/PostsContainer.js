@@ -23,7 +23,8 @@ const PostsContainer = () => {
             <div className={"header"}>HW2 Task1</div>
             {posts.map((post) => {
                 return (
-                    show ?
+
+                        show ?
                         <PostsDetailsComponent
                             key={post.id}
                             post={post}
@@ -35,6 +36,7 @@ const PostsContainer = () => {
                             post={post}
                             handleClick={handleClick}
                         />
+
 
                 )
             })}
