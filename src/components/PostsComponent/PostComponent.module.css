@@ -1,0 +1,8 @@
+.container{
+    width: 40%;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    background-color: lavenderblush;
+    margin: 5px;
+    padding: 5px;
+}

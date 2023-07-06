@@ -1,13 +1,12 @@
 import './App.css';
+import PostsContainer from "./components/PostsContainer/PostsContainer";
 
 function App() {
-  return (
-    <div className="wrapper">
-      <div className={"header"}>HW2 Task1</div>
-
-
-    </div>
-  );
+    return (
+        <div className="wrapper">
+            <PostsContainer/>
+        </div>
+    );
 }
 
 export default App;
