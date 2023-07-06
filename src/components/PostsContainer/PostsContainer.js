@@ -1,6 +1,6 @@
 import PostsComponent from "../PostsComponent/PostsComponent";
 import {useEffect, useState} from "react";
-import PostsDetailsComponent from "../../PostDetails/PostDetailsCompanent";
+import PostsDetailsComponent from "../PostDetails/PostDetailsCompanent";
 
 const PostsContainer = () => {
 

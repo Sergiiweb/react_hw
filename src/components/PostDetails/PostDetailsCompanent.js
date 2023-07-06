@@ -1,4 +1,4 @@
-import style from "../components/PostsComponent/PostComponent.module.css";
+import style from "../PostsComponent/PostComponent.module.css";
 
 const PostsDetailsComponent = (props) => {
     const {post, handleClick} = props;
