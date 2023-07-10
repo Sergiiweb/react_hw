@@ -1,12 +1,11 @@
 import './App.css';
 
 function App() {
-  return (
-    <div className="wrapper">
-
-
-    </div>
-  );
+    return (
+        <div className="wrapper">
+            App
+        </div>
+    );
 }
 
-export default App;
+export {App};
