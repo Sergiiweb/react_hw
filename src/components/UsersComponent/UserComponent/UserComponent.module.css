@@ -9,3 +9,9 @@
     background-color: lightgrey;
     padding: 5px;
 }
+
+button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+}
