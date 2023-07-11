@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UserAddress = ({user}) => {
-    const {address:{street, suite, city}} = user;
+    const {address: {street, suite, city}} = user;
     return (
         <div>
             <h2>UserAddress</h2>

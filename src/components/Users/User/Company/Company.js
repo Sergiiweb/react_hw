@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Company = ({user}) => {
-    const {company:{name,catchPhrase,bs}} = user;
+    const {company: {name, catchPhrase, bs}} = user;
     return (
         <div>
             <h2>Company</h2>
