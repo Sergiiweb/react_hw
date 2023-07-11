@@ -5,12 +5,21 @@ body {
 .wrapper {
     width: 100vw;
     min-height: 100vh;
-    display: flex;
+    /*display: flex;*/
 }
 
-h2{
+h2 {
     margin: 0 20px;
 }
-.wrap{
+
+.wrap {
     width: 45%;
+}
+
+div {
+    margin: 20px;
+}
+
+.sendDiv {
+    border: 1px solid black;
 }
