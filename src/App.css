@@ -7,3 +7,7 @@ body {
     min-height: 100vh;
     background-color: lightgrey;
 }
+
+h2{
+    margin: 0 20px;
+}
