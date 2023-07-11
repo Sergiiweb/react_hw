@@ -23,3 +23,7 @@ div {
 .sendDiv {
     border: 1px solid black;
 }
+
+button {
+    margin: 10px;
+}

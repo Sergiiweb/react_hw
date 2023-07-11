@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {SomeContext} from "../../Child2/SubChild2_2/SubChild2_2";
+import {SomeContext} from "../../../App";
 
 const SubChild11 = ({smth}) => {
 
@@ -8,8 +8,8 @@ const SubChild11 = ({smth}) => {
     return (
         <div>
             SubChild1_1
-            {smth ? (<div>{smth} in SubChild11</div>) : ''}
-            <div>CONTEXT: {someData}</div>
+            <div>Lifting and drill: {smth ? (<span>{smth} in SubChild11</span>) : ''}</div>
+            <div><b>CONTEXT: {someData}</b></div>
         </div>
     );
 };
