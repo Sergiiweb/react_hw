@@ -36,11 +36,11 @@ const CarCreator = () => {
                 </label>
                 <label>Price:
                     <br/>
-                    <input type="text" ref={priceRef} placeholder={'price'}/>
+                    <input type="text" ref={priceRef} min={0} max={1000000} placeholder={'price'}/>
                 </label>
                 <label>Year:
                     <br/>
-                    <input type="text" ref={yearRef} placeholder={'year'}/>
+                    <input type="text" ref={yearRef} min={1990} max={2023} placeholder={'year'}/>
                 </label>
                 <input type="submit" value={'create'} className={styles.submitB}/>
             </form>

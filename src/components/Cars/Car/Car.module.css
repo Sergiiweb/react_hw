@@ -1,0 +1,13 @@
+.carContainer{
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+.buttonsDiv{
+    margin: 5px;
+}

@@ -1,16 +1,14 @@
 import './App.css';
+import Cars from "./components/Cars/Cars";
 import {CarCreator} from "./components/CarCreator/CarCreator";
-import {CarUpdater} from "./components/CarUpdater/CarUpdater";
-import {CarDeleter} from "./components/CarDeleter/CarDeleter";
+import React from "react";
 
 function App() {
 
-
     return (
         <div className="wrapper">
+            <Cars />
             <CarCreator/>
-            <CarUpdater/>
-            <CarDeleter/>
         </div>
     );
 }

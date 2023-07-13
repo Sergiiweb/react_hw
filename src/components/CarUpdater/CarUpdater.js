@@ -1,20 +1,18 @@
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
 
 import styles from './CarUpdater.module.css';
 
-const CarUpdater = () => {
+const CarUpdater = ({id, setRerender}) => {
 
-    const idRef = useRef('');
     const brandRef = useRef('');
     const priceRef = useRef('');
     const yearRef = useRef('');
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(brandRef.current.value, priceRef.current.value, yearRef.current.value);
-        fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${idRef.current.value}`, {
+        fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${id}`, {
             method: 'PATCH',
             body: JSON.stringify({
-                id: idRef.current.value,
                 brand: brandRef.current.value,
                 price: priceRef.current.value,
                 year: yearRef.current.value,
@@ -25,17 +23,18 @@ const CarUpdater = () => {
         })
             .then((response) => response.json())
             .then((json) => console.log(json));
+        setRerender(brandRef.current.value);
     }
+
+    useEffect(()=>{
+
+    },[brandRef, priceRef, yearRef])
 
     return (
         <div className={styles.wrap}>
             <div className={styles.formTitle}>Update Car:</div>
 
             <form className={styles.form} onSubmit={handleSubmit}>
-                <label>Enter car Id to update:
-                    <br/>
-                    <input type="number" ref={idRef} placeholder={'car id'}/>
-                </label>
                 <label>Brand:
                     <br/>
                     <input type="text" ref={brandRef} placeholder={'brand'}/>
