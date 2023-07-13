@@ -1,6 +1,7 @@
 import './App.css';
 import {CarCreator} from "./components/CarCreator/CarCreator";
 import {CarUpdater} from "./components/CarUpdater/CarUpdater";
+import {CarDeleter} from "./components/CarDeleter/CarDeleter";
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
         <div className="wrapper">
             <CarCreator/>
             <CarUpdater/>
+            <CarDeleter/>
         </div>
     );
 }
