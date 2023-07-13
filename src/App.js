@@ -1,5 +1,6 @@
 import './App.css';
 import {CreateUser} from "./components/CreateUser/CreateUser";
+import {CreateComment} from "./components/CreateComment/CreateComment";
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     return (
         <div className="wrapper">
             <CreateUser/>
+            <CreateComment/>
         </div>
     );
 }
