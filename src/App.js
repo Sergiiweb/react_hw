@@ -1,11 +1,12 @@
 import './App.css';
+import {CreateUser} from "./components/CreateUser/CreateUser";
 
 function App() {
 
 
     return (
         <div className="wrapper">
-
+            <CreateUser/>
         </div>
     );
 }
