@@ -23,7 +23,8 @@ const CarUpdater = ({id, setRerender}) => {
         })
             .then((response) => response.json())
             .then((json) => console.log(json));
-        setRerender(brandRef.current.value);
+        setTimeout(()=>setRerender(brandRef.current.value), 500);
+
     }
 
     useEffect(()=>{

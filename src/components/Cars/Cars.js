@@ -16,7 +16,7 @@ const Cars = () => {
         fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${id}`, {
             method: 'DELETE',
         });
-        setRerender(id);
+        setTimeout(()=>setRerender(id), 500);
     }
 
 

@@ -10,7 +10,7 @@ const Car = ({car, handleDelete, setRerender}) => {
 
     return (
         <div className={styles.carContainer}>
-            <div>id: {id}</div>
+            <div><b>Car</b> with id: {id}</div>
             <div>brand: {brand}</div>
             <div>price: {price}</div>
             <div>year: {year}</div>
