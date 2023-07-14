@@ -1,0 +1,12 @@
+.carsWrap{
+}
+
+
+.carWrap {
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    background-color: lightgrey;
+}
