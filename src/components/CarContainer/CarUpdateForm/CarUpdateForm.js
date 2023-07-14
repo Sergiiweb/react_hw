@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const CarUpdateForm = ({id, brand, price, year, setOnUpdate}) => {
+const CarUpdateForm = ({id, brand, price, year, setOnUpdate, setIsShowUpdate}) => {
     const initialState = {
         brand: brand,
         price: price,
@@ -21,6 +21,7 @@ const CarUpdateForm = ({id, brand, price, year, setOnUpdate}) => {
         }).then(value => value.json())
             .then(() => {
                 setOnUpdate(prev => !prev);
+                setIsShowUpdate(false);
             })
     }
 
