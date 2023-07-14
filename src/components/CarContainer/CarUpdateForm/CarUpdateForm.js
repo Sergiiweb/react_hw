@@ -21,7 +21,6 @@ const CarUpdateForm = ({id, brand, price, year, setOnUpdate}) => {
         }).then(value => value.json())
             .then(() => {
                 setOnUpdate(prev => !prev);
-                setCar(initialState);
             })
     }
 
