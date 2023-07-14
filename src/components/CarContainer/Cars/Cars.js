@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {Car} from "../Car/Car";
 import styles from '../Car/Cars.module.css';
 
-const Cars = ({onSave}) => {
+const Cars = ({onSave, setIsShowUpdate, setDataForUpd}) => {
     const [cars, setCars] = useState([]);
     const [onUpdate,setOnUpdate] = useState(false);
     const [onDelete,setOnDelete] = useState(false);
@@ -15,7 +15,14 @@ const Cars = ({onSave}) => {
 
     return (
         <div className={styles.carsWrap}>
-            {cars.map(car=><Car key={car.id} car={car} setOnUpdate={setOnUpdate} setOnDelete={setOnDelete}/>)}
+            {cars.map(car=><Car
+                key={car.id}
+                car={car}
+                setOnUpdate={setOnUpdate}
+                setOnDelete={setOnDelete}
+                setIsShowUpdate={setIsShowUpdate}
+                setDataForUpd={setDataForUpd}
+            />)}
         </div>
     );
 };

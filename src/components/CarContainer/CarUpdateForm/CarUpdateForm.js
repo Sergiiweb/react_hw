@@ -26,17 +26,19 @@ const CarUpdateForm = ({id, brand, price, year, setOnUpdate, setIsShowUpdate}) =
     }
 
     return (
-        <form onSubmit={updateCar}>
-            <div><label>brand: <input type="text" value={car.brand} name={'brand'} onChange={inputHandle}
-                                      placeholder={brand}/></label>
-            </div>
-            <div><label>price: <input type="text" value={car.price} name={'price'} onChange={inputHandle}
-                                      placeholder={price}/></label>
-            </div>
-            <div><label>year: <input type="text" value={car.year} name={'year'} onChange={inputHandle}
-                                     placeholder={year}/></label></div>
-            <button>UpdateCar</button>
-        </form>
+        <div>
+            <form onSubmit={updateCar}>
+                <div><label>brand: <input type="text" value={car.brand} name={'brand'} onChange={inputHandle}
+                                          placeholder={brand}/></label>
+                </div>
+                <div><label>price: <input type="text" value={car.price} name={'price'} onChange={inputHandle}
+                                          placeholder={price}/></label>
+                </div>
+                <div><label>year: <input type="text" value={car.year} name={'year'} onChange={inputHandle}
+                                         placeholder={year}/></label></div>
+                <button>UpdateCar</button>
+            </form>
+        </div>
     );
 };
 
