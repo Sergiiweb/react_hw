@@ -1,4 +1,5 @@
 import {useState} from "react";
+import styles from './CarForm.module.css'
 
 const CarForm = ({setOnSave}) => {
     const initialState = {
@@ -26,14 +27,17 @@ const CarForm = ({setOnSave}) => {
     }
 
     return (
+        <div className={styles.wrap}>
+            <h2>Create Car</h2>
         <form onSubmit={saveCar}>
             <div><label>brand: <input type="text" value={car.brand} name={'brand'} onChange={inputHandle}/></label>
             </div>
             <div><label>price: <input type="text" value={car.price} name={'price'} onChange={inputHandle}/></label>
             </div>
             <div><label>year: <input type="text" value={car.year} name={'year'} onChange={inputHandle}/></label></div>
-            <button>Save</button>
+            <button>SaveCar</button>
         </form>
+        </div>
     );
 };
 
