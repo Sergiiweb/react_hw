@@ -29,14 +29,17 @@ const CarForm = ({setOnSave}) => {
     return (
         <div className={styles.wrap}>
             <h2>Create Car</h2>
-        <form onSubmit={saveCar}>
-            <div><label>brand: <input type="text" value={car.brand} name={'brand'} onChange={inputHandle}/></label>
-            </div>
-            <div><label>price: <input type="text" value={car.price} name={'price'} onChange={inputHandle}/></label>
-            </div>
-            <div><label>year: <input type="text" value={car.year} name={'year'} onChange={inputHandle}/></label></div>
-            <button>SaveCar</button>
-        </form>
+            <form onSubmit={saveCar}>
+                <div><label>brand: <input type="text" value={car.brand} name={'brand'} onChange={inputHandle}
+                                          placeholder={'Car Brand'}/></label>
+                </div>
+                <div><label>price: <input type="text" value={car.price} name={'price'} onChange={inputHandle}
+                                          placeholder={'1-1000000'}/></label>
+                </div>
+                <div><label>year: <input type="text" value={car.year} name={'year'} onChange={inputHandle}
+                                         placeholder={'1990-2023'}/></label></div>
+                <button>SaveCar</button>
+            </form>
         </div>
     );
 };
