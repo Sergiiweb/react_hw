@@ -10,30 +10,34 @@ export const CarServices = {
         instance.get()
             .then(value => setCars(value.data))
     },
-    // getUsers: (setUsers) => {
-    //     fetch(baseUrl + Endpoints.USERS)
-    //         .then(value => value.json())
-    //         .then(value => setUsers(value))
-    // },
-    addUser: (user, setUsers) => {
-        instance.post(Endpoints.USERS, {
-            body: JSON.stringify(user)
+    deleteCar: (setOnDelete, id) => {
+        instance.delete(`${id}`, {
+            method: 'DELETE'
+        }).then(() => {
+            setOnDelete(prev => !prev);
+        })
+    },
+    saveCar: (data, setOnSave) => {
+        const {brand, price, year} = data;
+        instance.post('', {
+            brand: brand,
+            price: price,
+            year: year
         })
             .then(value => {
-                // setUsers(prev => [...prev, value.data.body]);
-                console.log(value.data);
+                setOnSave(prev => !prev);
             })
     },
-    // addUser: (user, setUsers) => {
-    //     fetch(baseUrl + Endpoints.USERS, {
-    //         headers: {'Content-type': 'application/json'},
-    //         method: 'POST',
-    //         body: JSON.stringify(user)
-    //     })
-    //         .then(value => value.json())
-    //         .then(value => {
-    //             setUsers(prev => [...prev, value]);
-    //             console.log(value);
-    //         })
-    // }
+    updateCar: (data, carForUpdate, setOnSave, setCarForUpdate) => {
+        const {brand, price, year} = data;
+        instance.put(`${carForUpdate.id}`, {
+            brand: brand,
+            price: price,
+            year: year
+        }).then(() => {
+            setOnSave(prev => !prev);
+            setCarForUpdate(null);
+        })
+    }
+
 }
