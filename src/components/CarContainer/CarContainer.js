@@ -5,14 +5,12 @@ import styles from './CarContainer.module.css';
 
 const CarContainer = () => {
     const [onSave,setOnSave] = useState(null);
-    const [isShowUpdate, setIsShowUpdate] = useState(false);
-    const [dataForUpd, setDataForUpd] = useState({id:'',brand:'',price:'',year:''});
 
     return (
         <div className={styles.container}>
 
-            <Cars onSave={onSave} setIsShowUpdate={setIsShowUpdate} setDataForUpd={setDataForUpd}/>
-            <CarForm setOnSave={setOnSave} isShowUpdate={isShowUpdate} dataForUpd={dataForUpd}/>
+            <Cars onSave={onSave} />
+            <CarForm setOnSave={setOnSave} />
         </div>
     );
 };

@@ -5,12 +5,8 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../validators/carValidator";
 import styles from './CarForm.module.css';
 
-const CarForm = ({setOnSave, isShowUpdate, dataForUpd}) => {
-    console.log(dataForUpd);
-    const idUpd = dataForUpd.id;
-    const brandUpd = dataForUpd.brand;
-    const priceUpd = dataForUpd.price;
-    const yearUpd = dataForUpd.year;
+const CarForm = ({setOnSave}) => {
+
     const {
         register,
         handleSubmit,
@@ -23,36 +19,11 @@ const CarForm = ({setOnSave, isShowUpdate, dataForUpd}) => {
         resolver: joiResolver(carValidator)
     });
 
-    const changeCar = (data, idUpd) => {
-        if (!isShowUpdate) {
-            saveCar(data)
-        } else {
-            updateCar(data, idUpd)
-        }
-    }
+
     const saveCar = (data) => {
         fetch('http://owu.linkpc.net/carsAPI/v1/cars', {
             headers: {'content-type': 'application/json'},
             method: 'POST',
-            body: JSON.stringify(data)
-        }).then(value => {
-            if (!value.ok) {
-                throw Error(value.status + ' not ok')
-            }
-            return value.json();
-        })
-            .then(value => {
-                setOnSave(prev => !prev);
-                // reset();
-            })
-            .catch(e => console.log(e))
-    }
-
-    const updateCar = (data, idUpd) => {
-        console.log(idUpd);
-        fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${idUpd}`, {
-            headers: {'content-type': 'application/json'},
-            method: 'PATCH',
             body: JSON.stringify(data)
         }).then(value => {
             if (!value.ok) {
@@ -67,10 +38,11 @@ const CarForm = ({setOnSave, isShowUpdate, dataForUpd}) => {
             .catch(e => console.log(e))
     }
 
+
     return (
         <div className={styles.wrap}>
-            {isShowUpdate ? <h2>Update Car {dataForUpd.id}</h2> : <h2>Create Car</h2>}
-            <form className={styles.form} onSubmit={handleSubmit(changeCar)}>
+            <h2>Create Car</h2>
+            <form className={styles.form} onSubmit={handleSubmit(saveCar)}>
                 <label><input type="text" placeholder={'brand'} {...register('brand', {
                     required: true
                 })}/></label>
@@ -89,10 +61,7 @@ const CarForm = ({setOnSave, isShowUpdate, dataForUpd}) => {
                     // max: {value:new Date().getFullYear(), message:`year lte ${new Date().getFullYear()}`}
                 })}/></label>
                 {errors.year && <span>{errors.year.message}</span>}
-                {isShowUpdate ?
-                    <button disabled={!isValid}>UpdateCar</button> :
-                    <button disabled={!isValid}>SaveCar</button>}
-
+                <button disabled={!isValid}>SaveCar</button>
             </form>
 
         </div>

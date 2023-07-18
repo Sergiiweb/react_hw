@@ -1,6 +1,6 @@
 import styles from './Cars.module.css'
 
-const Car = ({car, setOnUpdate, setOnDelete, setIsShowUpdate,setDataForUpd}) => {
+const Car = ({car, setOnDelete}) => {
     const {id, brand, price, year} = car;
 
     function deleteCar(id) {
@@ -18,8 +18,6 @@ const Car = ({car, setOnUpdate, setOnDelete, setIsShowUpdate,setDataForUpd}) => 
             <div>price: {price}</div>
             <div>year: {year}</div>
             <button onClick={() => {
-                setIsShowUpdate(prev => !prev);
-                setDataForUpd({id: id, brand: brand, price: price, year: year})
             }}>
                 {/*{isShowUpdate ? 'Hide Fields for Update' : 'Show Fields for Update'}*/}
                 {"UpdateCar ->"}
