@@ -1,6 +1,7 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 import styles from "../../UserContainer/UserForm/UserForm.module.css";
+import {CommentServices} from "../../../services/apiServices";
 
 const CommentForm = ({setComments}) => {
     const {
@@ -10,16 +11,8 @@ const CommentForm = ({setComments}) => {
     } = useForm();
 
     const save = (comment) => {
-        fetch('https://jsonplaceholder.typicode.com/comments', {
-            headers: {'Content-type': 'application/json'},
-            method: 'POST',
-            body: JSON.stringify(comment)
-        })
-            .then(value => value.json())
-            .then(value => {
-                setComments(prev => [...prev, value]);
-                reset();
-            })
+        CommentServices.addComment(comment, setComments);
+        reset();
     }
 
     return (

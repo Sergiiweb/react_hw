@@ -1,6 +1,7 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 import styles from './UserForm.module.css';
+import {UserServices} from "../../../services/apiServices";
 
 const UserForm = ({setUsers}) => {
     const {
@@ -10,16 +11,8 @@ const UserForm = ({setUsers}) => {
     } = useForm();
 
     const save = (user) => {
-        fetch('https://jsonplaceholder.typicode.com/users', {
-            headers: {'Content-type': 'application/json'},
-            method: 'POST',
-            body: JSON.stringify(user)
-        })
-            .then(value => value.json())
-            .then(value => {
-                setUsers(prev => [...prev, value]);
-                reset();
-            })
+        UserServices.addUser(user, setUsers);
+        reset();
     }
 
     return (

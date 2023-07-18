@@ -1,17 +1,16 @@
 import React, {useEffect} from 'react';
 import {Comment} from "../Comment/Comment";
+import {CommentServices} from "../../../services/apiServices";
 
 const Comments = ({comments, setComments}) => {
 
     useEffect(() => {
-        fetch('http://jsonplaceholder.typicode.com/comments')
-            .then(value => value.json())
-            .then(value => setComments(value))
+        CommentServices.getComments(setComments);
     }, []);
 
     return (
         <div>
-            {comments.map(comment=><Comment key={comment.id} comment={comment} />)}
+            {comments.map(comment=><Comment key={comment.id+20} comment={comment} />)}
         </div>
     );
 };
