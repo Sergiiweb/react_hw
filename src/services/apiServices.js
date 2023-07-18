@@ -20,7 +20,7 @@ export const UserServices = {
             body: JSON.stringify(user)
         })
             .then(value => {
-                setUsers(prev => [...prev, value.data.body]);
+                // setUsers(prev => [...prev, value.data.body]);
                 console.log(value.data);
             })
     },
@@ -49,15 +49,24 @@ export const CommentServices = {
     //         .then(value => setComments(value))
     // },
     addComment: (comment, setComments) => {
-        fetch(baseUrl + Endpoints.COMMENTS, {
-            headers: {'Content-type': 'application/json'},
-            method: 'POST',
+        instance.post(Endpoints.COMMENTS, {
             body: JSON.stringify(comment)
         })
-            .then(value => value.json())
             .then(value => {
-                setComments(prev => [...prev, value]);
-                console.log(value);
+                // setComments(prev => [...prev, value.data]);
+                console.log(value.data);
             })
-    }
+    },
+    // addComment: (comment, setComments) => {
+    //     fetch(baseUrl + Endpoints.COMMENTS, {
+    //         headers: {'Content-type': 'application/json'},
+    //         method: 'POST',
+    //         body: JSON.stringify(comment)
+    //     })
+    //         .then(value => value.json())
+    //         .then(value => {
+    //             setComments(prev => [...prev, value]);
+    //             console.log(value);
+    //         })
+    // }
 }
