@@ -53,8 +53,9 @@ export const CommentServices = {
             body: JSON.stringify(comment)
         })
             .then(value => {
-                // setComments(prev => [...prev, value.data]);
+                setComments(prev => [...prev, value.data]);
                 console.log(value.data);
+                console.log(JSON.parse(value.data.body));
             })
     },
     // addComment: (comment, setComments) => {
@@ -68,5 +69,16 @@ export const CommentServices = {
     //             setComments(prev => [...prev, value]);
     //             console.log(value);
     //         })
-    // }
+    // },
+    // addComment: (comment, setComments) => {
+    //     axios({
+    //         method: 'post',
+    //         url: baseUrl + Endpoints.COMMENTS,
+    //         data: JSON.stringify(comment)
+    //     })
+    //             .then(value => {
+    //                 setComments(prev => [...prev, value.data]);
+    //                 console.log(value);
+    //     });
+    // },
 }
