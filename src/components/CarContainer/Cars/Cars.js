@@ -1,15 +1,17 @@
 import {useEffect, useState} from "react";
 import {Car} from "../Car/Car";
 import styles from '../Car/Cars.module.css';
+import {CarServices} from "../../../services/apiServices";
 
-const Cars = ({onSave}) => {
+const Cars = ({onSave, setCarForUpdate}) => {
     const [cars, setCars] = useState([]);
     const [onDelete,setOnDelete] = useState(false);
 
     useEffect(() => {
-        fetch('http://owu.linkpc.net/carsAPI/v1/cars')
-            .then(value => value.json())
-            .then(value => setCars(value));
+        CarServices.getCars(setCars);
+        // fetch('http://owu.linkpc.net/carsAPI/v1/cars')
+        //     .then(value => value.json())
+        //     .then(value => setCars(value));
     }, [onSave,onDelete])
 
     return (
@@ -18,6 +20,7 @@ const Cars = ({onSave}) => {
                 key={car.id}
                 car={car}
                 setOnDelete={setOnDelete}
+                setCarForUpdate={setCarForUpdate}
             />)}
         </div>
     );

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import Joi from "joi";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../validators/carValidator";
 import styles from './CarForm.module.css';
 
-const CarForm = ({setOnSave}) => {
+const CarForm = ({setOnSave, carForUpdate,setCarForUpdate}) => {
 
     const {
         register,
@@ -19,6 +19,13 @@ const CarForm = ({setOnSave}) => {
         resolver: joiResolver(carValidator)
     });
 
+    useEffect(() => {
+        if (carForUpdate) {
+            setValue('brand', carForUpdate.brand, {shouldValidate:true});
+            setValue('price', carForUpdate.price, {shouldValidate:true});
+            setValue('year', carForUpdate.year, {shouldValidate:true});
+        }
+    }, [carForUpdate]);
 
     const saveCar = (data) => {
         fetch('http://owu.linkpc.net/carsAPI/v1/cars', {
@@ -38,11 +45,23 @@ const CarForm = ({setOnSave}) => {
             .catch(e => console.log(e))
     }
 
+    const updateCar = (car) => {
+        fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${carForUpdate.id}`, {
+            headers: {'content-type': 'application/json'},
+            method: 'PUT',
+            body: JSON.stringify(car)
+        }).then(value => value.json()).then(()=>{
+            setOnSave(prev=>!prev);
+            setCarForUpdate(null);
+            reset();
+        })
+    }
+
 
     return (
         <div className={styles.wrap}>
             <h2>Create Car</h2>
-            <form className={styles.form} onSubmit={handleSubmit(saveCar)}>
+            <form className={styles.form} onSubmit={handleSubmit(!carForUpdate?saveCar:updateCar)}>
                 <label><input type="text" placeholder={'brand'} {...register('brand', {
                     required: true
                 })}/></label>
@@ -61,7 +80,7 @@ const CarForm = ({setOnSave}) => {
                     // max: {value:new Date().getFullYear(), message:`year lte ${new Date().getFullYear()}`}
                 })}/></label>
                 {errors.year && <span>{errors.year.message}</span>}
-                <button disabled={!isValid}>SaveCar</button>
+                <button disabled={!isValid}>{!carForUpdate?'SaveCar':'UpdateCar'}</button>
             </form>
 
         </div>
