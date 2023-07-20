@@ -7,17 +7,15 @@ import styles from './Comments.module.css'
 
 const Comments = () => {
     const [comments, setComments] = useState([]);
-    const [trigger, setTrigger] = useState(null);
     const [post, setPost] = useState(null);
 
     const viewPost = (postId) => {
         postsService.getById(postId).then(({data}) => setPost(data))
-        setTrigger(prev => !prev)
     }
 
     useEffect(() => {
         commentsService.getAll().then(({data}) => setComments(data))
-    }, [trigger])
+    }, [])
 
     return (
         <div>
