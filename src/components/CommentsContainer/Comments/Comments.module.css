@@ -1,0 +1,10 @@
+.wrap{
+    display: flex;
+    justify-content: space-around;
+}
+
+.postWrap{
+    position: fixed;
+    left: 450px;
+    top: 10px;
+}
