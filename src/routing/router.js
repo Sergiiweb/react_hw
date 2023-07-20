@@ -2,8 +2,8 @@ import {createBrowserRouter} from "react-router-dom";
 import {TodosContainer} from "../components/TodosContainer/TodosContainer";
 import {AlbumsContainer} from "../components/AlbumsContainer/AlbumsContainer";
 import {CommentsContainer} from "../components/CommentsContainer/CommentsContainer";
-import {urls} from "../constants/urls";
 import {AppLayout} from "../components/AppLayout/AppLayout";
+import {AppRoutes} from "./AppRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -11,19 +11,19 @@ export const router = createBrowserRouter([
         errorElement: <h1>Wrong route!</h1>,
         children:[
             {
-                path: "/",
+                path: AppRoutes.MAIN,
                 element: <div>Main page!</div>,
             },
             {
-                path: urls.todos.base,
+                path: AppRoutes.TODOS,
                 element: <TodosContainer/>,
             },
             {
-                path: urls.albums.base,
+                path: AppRoutes.ALBUMS,
                 element: <AlbumsContainer/>,
             },
             {
-                path: urls.comments.base,
+                path: AppRoutes.COMMENTS,
                 element: <CommentsContainer/>,
             },
         ]

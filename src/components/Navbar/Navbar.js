@@ -1,22 +1,23 @@
 import styles from './Navbar.module.css';
 import {urls} from "../../constants/urls";
+import {AppRoutes} from "../../routing/AppRoutes";
 const Navbar = () => {
     const topMenu = [
         {
             label: 'Main',
-            route: '/'
+            route: AppRoutes.MAIN
         },
         {
             label: 'Todos',
-            route: urls.todos.base
+            route: AppRoutes.TODOS
         },
         {
             label: 'Albums',
-            route: urls.albums.base
+            route: AppRoutes.ALBUMS
         },
         {
             label: 'Comments',
-            route: urls.comments.base
+            route: AppRoutes.COMMENTS
         },
     ];
 
