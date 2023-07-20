@@ -3,7 +3,7 @@ const MainPage = () => {
     return (
         <div className={styles.main}>
             <h1>Welcome!</h1>
-            <div>Use Top-menu to navigate</div>
+            <div>Use Top-menu to navigate...</div>
         </div>
     );
 };
