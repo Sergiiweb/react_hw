@@ -4,6 +4,7 @@ import {AlbumsContainer} from "../components/AlbumsContainer/AlbumsContainer";
 import {CommentsContainer} from "../components/CommentsContainer/CommentsContainer";
 import {AppLayout} from "../components/AppLayout/AppLayout";
 import {AppRoutes} from "./AppRoutes";
+import MainPage from "../components/MainPage/MainPage";
 
 export const router = createBrowserRouter([
     {
@@ -12,7 +13,7 @@ export const router = createBrowserRouter([
         children:[
             {
                 path: AppRoutes.MAIN,
-                element: <div>Main page!</div>,
+                element: <MainPage/>,
             },
             {
                 path: AppRoutes.TODOS,

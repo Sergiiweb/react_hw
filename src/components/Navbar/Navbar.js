@@ -1,5 +1,4 @@
 import styles from './Navbar.module.css';
-import {urls} from "../../constants/urls";
 import {AppRoutes} from "../../routing/AppRoutes";
 import {Link} from "react-router-dom";
 
@@ -26,7 +25,7 @@ const Navbar = () => {
     return (
         <div className={styles.navbar}>
             {topMenu.map((button, idx) =>
-                <Link key={idx} to={button.route}>
+                <Link key={idx} to={button.route} className={styles.btn}>
                     {button.label}
                 </Link>)}
         </div>
