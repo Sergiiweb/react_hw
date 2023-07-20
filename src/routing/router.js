@@ -5,12 +5,13 @@ import {CommentsContainer} from "../components/CommentsContainer/CommentsContain
 import {AppLayout} from "../components/AppLayout/AppLayout";
 import {AppRoutes} from "./AppRoutes";
 import MainPage from "../components/MainPage/MainPage";
+import {Post} from "../components/PostsContainer/Post/Post";
 
 export const router = createBrowserRouter([
     {
-        element: <AppLayout />,
+        element: <AppLayout/>,
         errorElement: <h1>Wrong route!</h1>,
-        children:[
+        children: [
             {
                 path: AppRoutes.MAIN,
                 element: <MainPage/>,
@@ -26,6 +27,12 @@ export const router = createBrowserRouter([
             {
                 path: AppRoutes.COMMENTS,
                 element: <CommentsContainer/>,
+                children: [
+                    {
+                        path: AppRoutes.POSTINFO,
+                        element: <Post/>,
+                    }
+                ]
             },
         ]
     }
