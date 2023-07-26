@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {commentsService} from "../../services";
 import {Comment} from "./Comment/Comment";
 
-const Comments = () => {
+const Comments = ({setCommentId}) => {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ const Comments = () => {
 
     return (
         <div>
-            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
+            {comments.map(comment => <Comment key={comment.id} comment={comment} setCommentId={setCommentId}/>)}
         </div>
     );
 };

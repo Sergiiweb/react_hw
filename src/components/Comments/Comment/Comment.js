@@ -1,9 +1,14 @@
 import {useNavigate} from "react-router-dom";
 
-const Comment = ({comment}) => {
+const Comment = ({comment, setCommentId}) => {
     const {id, postId, name, email, body} = comment;
 
     const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`posts/${postId}`);
+        setCommentId(id);
+    }
 
     return (
         <div>
@@ -11,7 +16,7 @@ const Comment = ({comment}) => {
             <div>name: {name}</div>
             <div>email: {email}</div>
             <div>body: {body}</div>
-            <button onClick={() => navigate(`posts/${postId}`)}>GetPost</button>
+            <button onClick={handleClick}>GetPost</button>
         </div>
     );
 };
