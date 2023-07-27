@@ -1,0 +1,29 @@
+.Header {
+    height: 50px;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+}
+
+.Header a{
+    text-decoration: none;
+    color: darkblue;
+}
+
+.Header a[class='active']{
+    color: yellow;
+    font-weight: bold;
+}
+
+.logo {
+    margin: 0 20px;
+    background-color: blue;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.nav{
+    margin: 0 20px;
+}
