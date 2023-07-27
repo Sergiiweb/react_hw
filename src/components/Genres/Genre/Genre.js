@@ -1,7 +1,9 @@
-const Genre = () => {
+const Genre = ({genre}) => {
+    const {name} = genre;
+
     return (
         <div>
-            Genre
+            <div>{name}</div>
         </div>
     );
 };
