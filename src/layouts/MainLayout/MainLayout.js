@@ -1,3 +1,5 @@
+import {Outlet} from "react-router-dom";
+
 import {Header} from "../../components";
 
 const MainLayout = () => {
@@ -5,6 +7,7 @@ const MainLayout = () => {
         <div>
             <Header/>
             MainLayout
+            <Outlet/>
         </div>
     );
 };
