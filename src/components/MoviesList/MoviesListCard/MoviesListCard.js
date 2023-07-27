@@ -1,10 +1,13 @@
+import css from './MoviesListCard.module.css';
+import {PosterPreview} from "../../PosterPreview/PosterPreview";
 const MoviesListCard = ({movie}) => {
-    const {id, original_title} = movie;
+    const {id, title, poster_path} = movie;
     
     return (
-        <div>
+        <div className={css.wrap}>
+            <PosterPreview poster_path={poster_path} title={title}/>
             <div>id: {id}</div>
-            <div>original_title: {original_title}</div>
+            <div>title: {title}</div>
         </div>
     );
 };

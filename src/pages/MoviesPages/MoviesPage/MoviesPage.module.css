@@ -1,0 +1,12 @@
+.MoviesPageWrapper {
+    /*width: 90%;*/
+}
+
+.MoviesPageWrapper > h2 {
+    text-align: center;
+}
+
+.MoviesListWrapper {
+    /*display: flex;*/
+    /*justify-content: space-around;*/
+}
