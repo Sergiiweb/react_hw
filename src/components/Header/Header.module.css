@@ -1,26 +1,30 @@
 .Header {
     height: 50px;
-    background-color: lightgrey;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 25px;
+    border-bottom: 2px solid #DCDCDB;
 }
 
 .Header a{
     text-decoration: none;
-    color: darkblue;
+    color: yellow;
     margin: 0 20px;
 }
 
 .Header a[class='active']{
-    color: yellow;
+    color: darkblue;
     font-weight: bold;
 }
 
 .logo {
-    margin: 0 20px;
-    background-color: blue;
+    width: 220px;
+    height: 40px;
+    margin: 0 10px;
+    background-image: url("../../images/logo.png");
+    background-size: contain;
     padding: 5px;
     border-radius: 5px;
 }

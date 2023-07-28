@@ -1,13 +1,17 @@
 import css from './Header.module.css';
 import {NavLink} from "react-router-dom";
+import {UserInfo} from "../UserInfo/UserInfo";
 
 const Header = () => {
     return (
         <div className={css.Header}>
-            <div className={css.logo}><NavLink to={''}>The Movies app</NavLink></div>
+            <NavLink to={''}><div className={css.logo}></div></NavLink>
             <div className={css.nav}>
                 <NavLink to={'/movies'}>Movies</NavLink>
                 <NavLink to={'/genres'}>Genres</NavLink>
+            </div>
+            <div>
+                <UserInfo/>
             </div>
         </div>
     );

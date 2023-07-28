@@ -12,7 +12,9 @@ const headers = {
 };
 
 const urls = {
-    movies,
+    movies: {
+        byPage: (page) => `${movies}?page=${page}`
+    },
     genres,
     movie: {
         byId: (id) => `${movie}/${id}`

@@ -6,6 +6,11 @@ export * from "./Genres/Genres";
 export * from "./Genres/Genre/Genre";
 export * from "./MovieInfo/MovieInfo";
 export * from "./MovieInfo/MovieDetails/MovieDetails";
+export * from "./Genres/FilteredGenres/FilteredGenres";
+export * from "./Pagination/Pagination";
+export * from "./UserInfo/UserInfo";
+
+
 
 
 
