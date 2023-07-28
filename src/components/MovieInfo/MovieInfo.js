@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 
 import {moviesService} from "../../services";
 import {MovieDetails} from "./MovieDetails/MovieDetails";
+import css from './MovieInfo.module.css';
 
 const MovieInfo = () => {
     const [movie, setMovie] = useState([]);
@@ -13,8 +14,7 @@ const MovieInfo = () => {
     }, [movieId])
 
     return (
-        <div>
-            <h2>Movie Info:</h2>
+        <div className={css.MovieInfoWrapper}>
             <MovieDetails movie={movie}/>
         </div>
     );

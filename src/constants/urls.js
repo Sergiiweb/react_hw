@@ -13,7 +13,8 @@ const headers = {
 
 const urls = {
     movies: {
-        byPage: (page) => `${movies}?page=${page}`
+        byPage: (page) => `${movies}?page=${page}`,
+        byGenre: (id) => `${movies}?with_genres=${id}`,
     },
     genres,
     movie: {

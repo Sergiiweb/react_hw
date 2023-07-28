@@ -9,6 +9,11 @@ export * from "./MovieInfo/MovieDetails/MovieDetails";
 export * from "./Genres/FilteredGenres/FilteredGenres";
 export * from "./Pagination/Pagination";
 export * from "./UserInfo/UserInfo";
+export * from "./StarsRating/StarsRating";
+export * from "./Genres/FilteredGenres/FilteredGenre/FilteredGenre";
+export * from "./MoviesByGenre/MoviesByGenre";
+
+
 
 
 

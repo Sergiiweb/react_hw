@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 
 import {genresService} from "../../../services";
-import {Genre} from "../Genre/Genre";
 import css from './FilteredGenres.module.css';
+import {FilteredGenre} from "./FilteredGenre/FilteredGenre";
 
 const FilteredGenres = ({genre_ids}) => {
     const [genres, setGenres] = useState([]);
@@ -16,7 +16,7 @@ const FilteredGenres = ({genre_ids}) => {
 
     return (
         <div className={css.FilteredGenresWrap}>
-            {genres.map(genre => <Genre key={genre.id} genre={genre}/>)}
+            {genres.map(genre => <FilteredGenre key={genre.id} genre={genre}/>)}
         </div>
     );
 };
