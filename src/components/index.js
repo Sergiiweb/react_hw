@@ -12,6 +12,8 @@ export * from "./UserInfo/UserInfo";
 export * from "./StarsRating/StarsRating";
 export * from "./Genres/FilteredGenres/FilteredGenre/FilteredGenre";
 export * from "./MoviesByGenre/MoviesByGenre";
+export * from "./Footer/Footer";
+
 
 
 
