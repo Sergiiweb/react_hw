@@ -20,7 +20,11 @@ const router = createBrowserRouter([
             {
                 path: '/genres',
                 element: <GenresPage/>,
-                children:[
+                children: [
+                    {
+                        index: true,
+                        element: <Navigate to={'genreId/28'}/>
+                    },
                     {
                         path: 'genreId/:genreId',
                         element: <MoviesByGenre/>
