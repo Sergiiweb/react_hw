@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 25px;
+    font-size: 18px;
     border-bottom: 2px solid #DCDCDB;
 }
 
@@ -32,4 +32,8 @@
 
 .nav{
     margin: 0 20px;
+}
+
+.date {
+    font-size: 14px;
 }
