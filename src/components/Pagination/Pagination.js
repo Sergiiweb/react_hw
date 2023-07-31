@@ -10,7 +10,8 @@ const Pagination = ({page, setPage, totalPages}) => {
 
     return (
         <div className={css.wrap}>
-            <div className={css.Button}>{page>1&&<button onClick={()=>handleClickPrev(page)}>PrevPage</button>}</div>
+            <div className={css.Button}>{page>1 ? (<button onClick={()=>handleClickPrev(page)}>PrevPage</button>) :
+                <button disabled>PrevPage</button>}</div>
             <div className={css.Button}>{page<=totalPages&&<button onClick={()=>handleClickNext(page)}>NextPage</button>}</div>
         </div>
     );
