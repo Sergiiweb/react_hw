@@ -1,7 +1,7 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
-import {MainLayout} from "./layouts/MainLayout/MainLayout";
-import {AlbumsPage, CommentsPage, NotFoundPage, PostPage, TodosPage} from "./pages";
+import {MainLayout} from "./layouts";
+import {CarsPage, CommentsPage, NotFoundPage, PostsPage} from "./pages";
 
 const router = createBrowserRouter([
     {
@@ -10,25 +10,19 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Navigate to={'todos'}/>
+                element: <Navigate to={'posts'}/>
             },
             {
-                path: 'todos',
-                element: <TodosPage/>
-            },
-            {
-                path: 'albums',
-                element: <AlbumsPage/>
+                path: 'posts',
+                element: <PostsPage/>
             },
             {
                 path: 'comments',
-                element: <CommentsPage/>,
-                children: [
-                    {
-                        path: 'posts/:postId',
-                        element: <PostPage/>
-                    }
-                ]
+                element: <CommentsPage/>
+            },
+            {
+                path: 'cars',
+                element: <CarsPage/>,
             }
         ]
     },
