@@ -5,20 +5,21 @@ import {Comment} from "./Comment/Comment";
 class Comments extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            data:[]
+        };
     }
 
     componentDidMount() {
-        commentsService.getAll().then(({data}) => this.setState(data));
+        commentsService.getAll().then(({data}) => this.setState({data}));
     }
 
     render() {
-        console.log(this.state);
-        const result = Object.keys(this.state).map((key) => [ this.state[key]]);
-        console.log(result);
+        const {data} = this.state;
+        // const result = Object.keys(this.state).map((key) => [ this.state[key]]);
         return (
             <div>
-                {result.map(comment=><Comment key={comment.id} post={comment}/>)}
+                {data.map(comment=><Comment key={comment.id} comment={comment}/>)}
             </div>
         )
     }
