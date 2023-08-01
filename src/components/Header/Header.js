@@ -7,7 +7,7 @@ const Header = () => {
         <div className={css.Header}>
             <NavLink to={''}><div className={css.logo}></div></NavLink>
             <div className={css.nav}>
-                <NavLink to={'/movies'}>Movies</NavLink>
+                <NavLink to={'/movies/1'}>Movies</NavLink>
                 <NavLink to={'/genres'}>Genres</NavLink>
             </div>
             <div>

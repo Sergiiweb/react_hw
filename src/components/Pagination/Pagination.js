@@ -1,11 +1,17 @@
 import css from './Pagination.module.css';
-const Pagination = ({page, setPage, totalPages}) => {
+import {useNavigate, useParams} from "react-router-dom";
+const Pagination = ({totalPages}) => {
+    const navigate = useNavigate();
+    let {page} = useParams();
+
     const handleClickNext = (page) => {
-        setPage(page+1);
+        page = +page + 1;
+        navigate(`/movies/${page}`);
     };
 
     const handleClickPrev = (page) => {
-        setPage(page-1);
+        page = +page - 1;
+        navigate(`/movies/${page}`);
     };
 
     return (

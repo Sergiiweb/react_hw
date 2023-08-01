@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className={css.Header}>
             <div className={css.nav}>
-                <NavLink to={'/movies'}>Movies</NavLink>
+                <NavLink to={'/movies/1'}>Movies</NavLink>
                 <NavLink to={'/genres'}>Genres</NavLink>
             </div>
             <div className={css.date}>The Movie app©, {new Date().getFullYear()}</div>

@@ -18,4 +18,5 @@
 
 .genreWrap a[class='active'] {
     background-color: orange;
+    color: #FFFFFF;
 }

@@ -11,10 +11,10 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Navigate to={'/movies'}/>
+                element: <Navigate to={'/movies/1'}/>
             },
             {
-                path: '/movies',
+                path: '/movies/:page',
                 element: <MoviesPage/>
             },
             {
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
                 ]
             },
             {
-                path: 'movies/:movieId',
+                path: 'movies/movie/:movieId',
                 element: <MovieInfoPage/>
             }
         ]
