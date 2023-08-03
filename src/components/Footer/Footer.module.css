@@ -5,7 +5,8 @@
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
-    border-bottom: 2px solid #DCDCDB;
+    border-top: 2px solid #DCDCDB;
+    color: black;
 }
 
 .Header a{
