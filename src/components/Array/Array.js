@@ -23,15 +23,15 @@ const Array = () => {
     return (
         <div>
             Array:
+            <button style={{width:200, margin:"10px"}} onClick={addItem}>AddItem</button>
             {array.map((item, index) => {
                 return (
                     <div key={index} style={{display:"flex"}}>
-                        <div>{item}</div>
+                        <div style={{margin:"0 10px"}}>{item}</div>
                         <button onClick={()=>deleteItem(index)}>DeleteItem</button>
                     </div>
                 )
             })}
-            <button onClick={addItem}>AddItem</button>
         </div>
     );
 };
