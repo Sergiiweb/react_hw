@@ -1,0 +1,27 @@
+.EpisodesPagination {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.EpisodesPagination button {
+    font-size: 26px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: darkblue;
+    padding: 5px 20px;
+}
+
+.EpisodesPagination button:hover {
+    background-color: darkgray;
+    color: yellow;
+    cursor: pointer;
+}
+
+.EpisodesPagination button:disabled {
+    background-color: darkgray;
+    color: black;
+    cursor: auto;
+    opacity: .3;
+}
