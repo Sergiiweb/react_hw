@@ -4,7 +4,7 @@ const User = ({user}) => {
     const {id, name, image} = user;
     return (
         <div className={css.User}>
-            <div>{name}</div>
+            <div>name: {name}, id: {id}</div>
             <img src={image} alt={name}/>
         </div>
     );

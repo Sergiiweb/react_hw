@@ -3,9 +3,8 @@ import {useSelector} from "react-redux";
 import {useSearchParams} from "react-router-dom";
 
 const UsersPagination = () => {
-    const {info} = useSelector(state => state.usersReducer);
+    const {info:{next:nextPage,prev:prevPage}} = useSelector(state => state.usersReducer);
     const [, setQuery] = useSearchParams();
-    const {next:nextPage,prev:prevPage} = info;
     const toPrevPage = () => {
         setQuery(prev => ({...prev, page: +prev.get('page') - 1}))
     };
