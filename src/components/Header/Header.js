@@ -4,7 +4,12 @@ import {NavLink} from "react-router-dom";
 const Header = () => {
     return (
         <div className={css.Header}>
-            <NavLink to={'users'}>Users</NavLink>
+            <div className={css.Logo}>Rick & Morty</div>
+            <div className={css.Nav}>
+                <NavLink to={'users'}>Characters</NavLink>
+                <NavLink to={'episodes'}>Episodes</NavLink>
+                {/*<NavLink to={'characters'}>CharactersFromEpisodes</NavLink>*/}
+            </div>
         </div>
     );
 };

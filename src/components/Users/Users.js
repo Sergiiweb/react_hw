@@ -9,7 +9,7 @@ const Users = () => {
     const users = useSelector((state)=>state.usersReducer.results);
 
     useEffect(()=>{
-        fetch(`${baseURL}${urls.character}`)
+        fetch(`${baseURL}${urls.characters}`)
             .then(response=>response.json())
             .then(data => dispatch(usersActions.setUsers(data)))
     },[]);
