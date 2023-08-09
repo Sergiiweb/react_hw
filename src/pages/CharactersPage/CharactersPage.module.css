@@ -1,0 +1,20 @@
+.BackButton {
+    position: fixed;
+    right: 50px;
+    top: 90px;
+}
+
+.BackButton button {
+    font-size: 25px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: darkblue;
+    padding: 5px 20px;
+}
+
+.BackButton button:hover {
+    background-color: darkgray;
+    color: yellow;
+    cursor: pointer;
+}

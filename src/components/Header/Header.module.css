@@ -33,6 +33,10 @@
 }
 
 .Header a[class='active']{
-    color: yellow;
+    color: orange;
     font-weight: bold;
+}
+
+.Header a:hover {
+    color: yellow;
 }

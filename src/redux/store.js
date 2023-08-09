@@ -3,10 +3,12 @@ import {composeWithDevTools} from "@redux-devtools/extension";
 
 import {usersReducer} from "./reducers/usersReducer";
 import {episodesReducer} from "./reducers/episodesReducer";
+import {charactersReducer} from "./reducers/charactersReducer";
 
 const rootReducer = combineReducers({
     usersReducer: usersReducer,
-    episodes: episodesReducer
+    episodes: episodesReducer,
+    characters: charactersReducer
 })
 
 const composeEnhancers = composeWithDevTools({

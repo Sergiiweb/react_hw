@@ -4,4 +4,5 @@ export * from "./actions/usersActions";
 export * from "./actions/episodesActions";
 export * from "./actions/charactersActions";
 export * from "./reducers/episodesReducer";
+export * from "./reducers/charactersReducer";
 
