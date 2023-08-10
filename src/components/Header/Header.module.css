@@ -1,0 +1,19 @@
+.Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: snow;
+    font-size: 40px;
+}
+
+.small {
+    font-size: 18px;
+    background-color: #262626;
+    margin: 0 5px;
+    padding: 0 10px;
+    border-radius: 55px;
+    position: relative;
+    top: -5px;
+
+}
