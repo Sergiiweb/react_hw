@@ -1,0 +1,18 @@
+.Car {
+    width: 17%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 5px 10px;
+}
+
+.ButtonsWrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px 0;
+}
+
+.ButtonsWrap button {
+    min-width: 45%;
+}

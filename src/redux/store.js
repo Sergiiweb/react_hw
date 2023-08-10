@@ -1,10 +1,18 @@
 import {combineReducers, createStore} from "redux";
 
-const rootReducer =combineReducers({
+import {carsReducer} from "./reducers";
+import {composeWithDevTools} from "@redux-devtools/extension";
 
+const rootReducer = combineReducers({
+    cars: carsReducer
 });
 
-const store = createStore(rootReducer);
+const composeEnhancers = composeWithDevTools({
+    trace: true,
+    traceLimit: 25
+});
+
+const store = createStore(rootReducer, composeEnhancers());
 
 export {
     store
