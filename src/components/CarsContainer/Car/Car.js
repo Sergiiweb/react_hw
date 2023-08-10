@@ -1,7 +1,7 @@
-import css from './Car.module.css';
 import {useDispatch} from "react-redux";
-import {carsActions} from "../../../redux";
-import {carService} from "../../../services";
+
+import css from './Car.module.css';
+import {carsActions, deleteCarThunk} from "../../../redux";
 
 const Car = ({car}) => {
     const {id, brand, price, year} = car;
@@ -9,8 +9,7 @@ const Car = ({car}) => {
 
     const deleteCar = (id) => {
         try {
-            carService.deleteById(id);
-            dispatch(carsActions.delete(id));
+            dispatch(deleteCarThunk(id))
         } catch (e) {
             console.log(e.response.data);
         }
@@ -23,8 +22,8 @@ const Car = ({car}) => {
             <div>price: {price}</div>
             <div>year: {year}</div>
             <div className={css.ButtonsWrap}>
-                <button onClick={()=>dispatch(carsActions.setCarForUpdate(car))}>update</button>
-                <button onClick={()=>deleteCar(id)}>delete</button>
+                <button onClick={() => dispatch(carsActions.setCarForUpdate(car))}>update</button>
+                <button onClick={() => deleteCar(id)}>delete</button>
             </div>
         </div>
     );

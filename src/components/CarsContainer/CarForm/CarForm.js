@@ -1,14 +1,13 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
-
-import {carService} from "../../../services";
 import {useDispatch, useSelector} from "react-redux";
-import {carsActions} from "../../../redux";
-import {logDOM} from "@testing-library/react";
+
+import {createCarsThunk} from "../../../redux";
+import {updateCarThunk} from "../../../redux";
 
 const CarForm = () => {
     const [errors, setErrors] = useState(null);
-    let carForUpdate = useSelector(state => state.cars.carForUpdate);
+    const carForUpdate = useSelector(state => state.cars.carForUpdate);
     const dispatch = useDispatch();
 
     const {
@@ -17,17 +16,18 @@ const CarForm = () => {
         handleSubmit,
         setValue
     } = useForm();
-    // const { carForUpdate, setCarForUpdate} = useContext(Context);
 
-    if (carForUpdate) {
-        setValue('brand', carForUpdate.brand);
-        setValue('price', carForUpdate.price);
-        setValue('year', carForUpdate.year);
-    }
+    useEffect(() => {
+        if (carForUpdate) {
+            setValue('brand', carForUpdate.brand);
+            setValue('price', carForUpdate.price);
+            setValue('year', carForUpdate.year);
+        }
+    }, [carForUpdate, setValue])
+
     const save = (car) => {
         try {
-            carService.create(car)
-                .then(({data})=>dispatch(carsActions.create(data)));
+            dispatch(createCarsThunk(car));
             setErrors(null);
             reset();
         } catch (e) {
@@ -37,8 +37,7 @@ const CarForm = () => {
 
     const update = (car) => {
         try {
-            carService.updateById(carForUpdate.id, car)
-                .then(({data})=>dispatch(carsActions.update(data)));
+            dispatch(updateCarThunk(carForUpdate.id, car))
             setErrors(null);
             reset();
         } catch (e) {

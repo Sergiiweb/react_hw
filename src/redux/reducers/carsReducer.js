@@ -25,8 +25,8 @@ const carsReducer = (state = initialState, action) => {
         case carsActionsTypes.UPDATE_CAR:
             return {
                 ...state,
-                cars: state.cars.map(car=> car.id === action.payload.id ? action.payload : car),
-                carForUpdate: null
+                carForUpdate: null,
+                cars: state.cars.map(car => car.id === action.payload.id ? action.payload : car),
             }
         case carsActionsTypes.DELETE_CAR:
             return {

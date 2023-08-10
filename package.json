@@ -17,7 +17,8 @@
     "web-vitals": "^2.1.4",
     "react-redux": "^8.1.2",
     "redux": "^4.2.1",
-    "@redux-devtools/extension": "^3.2.5"
+    "@redux-devtools/extension": "^3.2.5",
+    "redux-thunk": "^2.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
