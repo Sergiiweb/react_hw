@@ -1,11 +1,12 @@
 import './App.css';
+import {CarContainer} from "./components";
 
 function App() {
 
 
     return (
-        <div className="wrapper">
-
+        <div>
+            <CarContainer/>
         </div>
     );
 }
