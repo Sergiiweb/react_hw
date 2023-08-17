@@ -1,9 +1,11 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, isFulfilled, isPending, isRejected} from "@reduxjs/toolkit";
 
 import {charactersService} from "../../services";
 
 const initialState = {
-    characters: []
+    characters: [],
+    errors: null,
+    isLoading: null
 };
 
 const allByIds = createAsyncThunk(
@@ -26,6 +28,18 @@ const charactersSlice = createSlice({
         builder.addCase(allByIds.fulfilled, (state, action) => {
             state.characters = action.payload
         })
+            .addMatcher(isPending(), state => {
+                state.isLoading = true
+                state.errors = null
+            })
+            .addMatcher(isFulfilled(), state => {
+                state.isLoading = false
+                state.errors = null
+            })
+            .addMatcher(isRejected(), (state, action) => {
+                state.isLoading = false
+                state.errors = action.payload
+            })
 })
 
 const {reducer: charactersReducer, actions} = charactersSlice;

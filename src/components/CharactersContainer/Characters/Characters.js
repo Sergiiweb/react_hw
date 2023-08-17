@@ -16,7 +16,7 @@ const Characters = () => {
 
     return (
         <div className={css.Characters}>
-            {characters?.map(character=><Character key={character.id} character={character}/>)}
+            {characters?.map(character => <Character key={character.id} character={character}/>)}
         </div>
     );
 };

@@ -1,11 +1,14 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, isFulfilled, isPending, isRejected} from "@reduxjs/toolkit";
 
 import {episodesService} from "../../services";
 
 const initialState = {
     prevPage: null,
     nextPage: null,
-    episodes: []
+    episodes: [],
+    episodeTitle: null,
+    errors: null,
+    isLoading: null
 };
 
 const all = createAsyncThunk(
@@ -23,19 +26,38 @@ const all = createAsyncThunk(
 const episodesSlice = createSlice({
     name: 'episodesSlice',
     initialState,
-    reducers: {},
+    reducers: {
+        setEpisodeTitle: (state, action) => {
+            state.episodeTitle = action.payload
+        }
+    },
     extraReducers: builder =>
-        builder.addCase(all.fulfilled, (state, action) => {
-            state.episodes = action.payload.results
-            state.prevPage = action.payload.info.prev
-            state.nextPage = action.payload.info.next
-        })
+        builder
+            .addCase(all.fulfilled, (state, action) => {
+                state.episodes = action.payload.results;
+                state.prevPage = action.payload.info.prev;
+                state.nextPage = action.payload.info.next;
+                state.episodeTitle = null;
+            })
+            .addMatcher(isPending(), state => {
+                state.isLoading = true
+                state.errors = null
+            })
+            .addMatcher(isFulfilled(), state => {
+                state.isLoading = false
+                state.errors = null
+            })
+            .addMatcher(isRejected(), (state, action) => {
+                state.isLoading = false
+                state.errors = action.payload
+            })
 })
 
-const {reducer: episodesReducer, actions} = episodesSlice;
+const {reducer: episodesReducer, actions: {setEpisodeTitle}} = episodesSlice;
 
 const episodesActions = {
-    all
+    all,
+    setEpisodeTitle
 }
 
 export {

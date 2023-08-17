@@ -24,16 +24,17 @@
 .Nav {
     width: 60%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: 10px;
 }
 
-.Header a{
+.Header a {
     text-decoration: none;
     color: darkblue;
 }
 
-.Header a[class='active']{
+.Header a[class='active'] {
     color: orange;
     font-weight: bold;
 }

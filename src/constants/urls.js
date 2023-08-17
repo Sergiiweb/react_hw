@@ -7,8 +7,8 @@ const characters = '/character'
 const urls = {
     characters,
     episodes,
-    charactersByIds:{
-        byIds: (iDs)=>`${characters}/${iDs}`
+    charactersByIds: {
+        byIds: (iDs) => `${characters}/${iDs}`
     }
 
 }
