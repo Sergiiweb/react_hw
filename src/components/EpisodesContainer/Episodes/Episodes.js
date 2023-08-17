@@ -13,7 +13,7 @@ const Episodes = () => {
     useEffect(() => {
         dispatch(episodesActions.all(query.get('page')));
         setQuery(prev => ({...prev, page: prev.get('page')}));
-    }, [dispatch])
+    }, [dispatch, setQuery, query])
 
     return (
         <div>
