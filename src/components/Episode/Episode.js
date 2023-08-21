@@ -1,7 +1,8 @@
 import {Button, Card, CardActions, CardContent, Typography} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {charactersActions, episodesActions} from "../../redux";
+
+import {episodesActions} from "../../redux";
 
 const Episode = ({episode}) => {
     const {id, name, air_date, episode: episodeName, characters} = episode;
