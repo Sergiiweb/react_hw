@@ -1,7 +1,7 @@
-import {Button, Card, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
+import {Card, CardContent, CardMedia, Typography} from "@mui/material";
 
 const Character = ({character}) => {
-    const {id, name,status,species,image} = character;
+    const {id, name, status, species, image} = character;
 
     return (
         <Card sx={{width: 275}}>
