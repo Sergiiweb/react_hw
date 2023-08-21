@@ -6,7 +6,7 @@ import {charactersActions} from "../../redux";
 import {Character} from "../Character/Character";
 import css from './Characters.module.css';
 
-const Characters = (effect, deps) => {
+const Characters = () => {
     const {state: {ids}} = useLocation()
     const dispatch = useDispatch();
     const {characters} = useSelector(state => state.characters);
