@@ -17,7 +17,7 @@ const Characters = (effect, deps) => {
 
     return (
         <div className={css.Characters}>
-            {characters.map(character => <Character kei={character.ia} character={character}/>)}
+            {characters.map(character => <Character key={character.id} character={character}/>)}
         </div>
     );
 };
