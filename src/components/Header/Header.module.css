@@ -1,0 +1,44 @@
+.Header {
+    /*height: 50px;*/
+    background-color: darkgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    border: 1px solid black;
+}
+
+.Logo {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    background-color: black;
+    color: snow;
+    cursor: pointer;
+}
+
+.Nav {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.Header a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+.Header a[class='active'] {
+    color: orange;
+    font-weight: bold;
+}
+
+.Header a:hover {
+    color: yellow;
+}

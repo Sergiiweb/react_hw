@@ -6,4 +6,4 @@ const apiService = axios.create({baseURL});
 
 export {
     apiService
-}
+};
