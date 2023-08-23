@@ -1,6 +1,5 @@
-import {Dispatch, FC, PropsWithChildren, SetStateAction, useEffect, useState} from "react";
+import {Dispatch, FC, PropsWithChildren, SetStateAction} from "react";
 import {ICar} from "../interfaces";
-import {carService} from "../services";
 import {Car} from "./Car";
 
 interface IProps extends PropsWithChildren {
