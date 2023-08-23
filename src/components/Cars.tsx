@@ -12,7 +12,7 @@ const Cars: FC<IProps> = () => {
     const {cars} = useAppSelector(state => state.cars);
 
     useEffect(() => {
-        dispatch(carsActions.getAll);
+        dispatch(carsActions.getAll());
     }, [dispatch]);
 
     return (
