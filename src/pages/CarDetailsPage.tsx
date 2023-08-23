@@ -1,7 +1,7 @@
-import {useAppLocation} from "../hooks";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 
+import {useAppLocation} from "../hooks";
 import {carService} from "../services";
 import {ICar} from "../interfaces";
 import {CarDetails} from "../components";
