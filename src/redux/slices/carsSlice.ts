@@ -35,8 +35,7 @@ const create = createAsyncThunk<void, { car: ICar, page: number }>(
         try {
             await carService.create(car);
             console.log(page);
-            // @ts-ignore
-            await dispatch(getAll(page));
+            await dispatch(getAll({page}));
         } catch (e) {
             const err = e as AxiosError;
             return rejectWithValue(err.response.data);
@@ -49,8 +48,7 @@ const update = createAsyncThunk<void, { id: number, car: ICar, page:number }>(
     async ({id, car, page}, {rejectWithValue, dispatch}) => {
         try {
             await carService.updateById(id, car);
-            // @ts-ignore
-            await dispatch(getAll(page));
+            await dispatch(getAll({page}));
         } catch (e) {
             const err = e as AxiosError;
             return rejectWithValue(err.response.data);
@@ -63,8 +61,7 @@ const deleteCar = createAsyncThunk<void, { id: number, page:number }>(
     async ({id, page}, {rejectWithValue, dispatch}) => {
         try {
             await carService.deleteById(id);
-            // @ts-ignore
-            await dispatch(getAll(page));
+            await dispatch(getAll({page}));
         } catch (e) {
             const err = e as AxiosError;
             return rejectWithValue(err.response.data);
