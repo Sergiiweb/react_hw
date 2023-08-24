@@ -1,0 +1,33 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+    background-color: yellow;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+a {
+    color: darkblue;
+    text-decoration: none;
+    margin: 0 30px;
+}
+
+.logo {
+    height: 50px;
+    width: 128px;
+    /*background-color: #fff;*/
+    background-image: url(../../assets/images/baby-car.png);
+    background-size: cover;
+}
+
+.logoLink {
+    margin: 0;
+    padding: 0;
+}
+
+.isLogin {
+    font-size: 20px;
+    color: darkblue;
+}

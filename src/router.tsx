@@ -1,7 +1,7 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
-import {CarDetailsPage, CarsPage} from "./pages";
+import {CarDetailsPage, CarsPage, LoginPage, RegisterPage} from "./pages";
 
 let router = createBrowserRouter([
     {
@@ -21,6 +21,14 @@ let router = createBrowserRouter([
                         element: <CarDetailsPage/>
                     }
                 ]
+            },
+            {
+                path: 'login',
+                element: <LoginPage/>
+            },
+            {
+                path: 'register',
+                element: <RegisterPage/>
             }
         ]
     }
