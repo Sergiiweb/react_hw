@@ -1,5 +1,5 @@
 import {FC, PropsWithChildren} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 
 import {ICar} from "../interfaces";
 import {useAppDispatch} from "../hooks";
@@ -13,9 +13,11 @@ const Car: FC<IProps> = ({car}) => {
     const {id, brand} = car;
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+    const [query] = useSearchParams({page: '1'});
+    const page = +query.get('page');
 
     const deleteCar = async () => {
-        await dispatch(carsActions.deleteCar({id}));
+        await dispatch(carsActions.deleteCar({id, page}));
     };
 
     return (

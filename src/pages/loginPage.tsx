@@ -15,7 +15,7 @@ const LoginPage = () => {
 
         if (requestStatus === 'fulfilled'){
             reset();
-            navigate('/cars');
+            navigate('/cars?page=1');
         }
     };
 

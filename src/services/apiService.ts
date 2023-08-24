@@ -2,6 +2,7 @@ import axios, {AxiosError, AxiosResponse} from "axios";
 
 import {baseURL, urls} from "../constants";
 import {authService} from "./authService";
+import {router} from "../router";
 
 type IRes<DATA> = Promise<AxiosResponse<DATA>>;
 
@@ -33,10 +34,12 @@ apiService.interceptors.response.use(
                 try {
                     await authService.refresh();
                     isRefreshing = false;
+                    afterRefresh();
                     return apiService(originalRequest);
                 } catch (e) {
                     authService.deleteTokens();
                     isRefreshing = false;
+                    await router.navigate('/login?sessionExpired=true');
                     return Promise.reject(error);
                 }
             }
